@@ -13,7 +13,8 @@ public class Test {
 //      test2();
 //      test3();
 //      deltest1();
-      deltest2();
+//      deltest2();
+      deltest3();
    }
 
 
@@ -68,10 +69,10 @@ public class Test {
     *      30b
     *    /     \
     *   10b     60r
-    *    \      / \
-    *    20r   40b 80b
-    *      \       / \
-    *      50r    70r 90r
+    *    \      /  \
+    *    20r   40b  80b
+    *           \   / \
+    *           50r 70r 90r
     *  preorder:
     *  30b, 10b, 20r, 60r, 40b, 50r, 80b, 70r, 90r
     */
@@ -124,51 +125,69 @@ public class Test {
       System.out.println("deltest1 end");
    }
 
-   public static void deltest2() {
-      String red = NodeColor.Red;
-      String black = NodeColor.Black;
-
-      System.out.println("deltest2 start");
+//   public static void deltest2() {
+//      String red = NodeColor.Red;
+//      String black = NodeColor.Black;
+//
+//      System.out.println("deltest2 start");
+//      RedBlackTree T = new RedBlackTree();
+//      RedBlackTreeNode nil = RedBlackTree.nil;
+//      RedBlackTreeNode root = new RedBlackTreeNode(black, 50, nil, nil, nil);
+//
+//      RedBlackTreeNode n30 = new RedBlackTreeNode(red, 30, nil, nil, root);
+//      RedBlackTreeNode n70 = new RedBlackTreeNode(red, 70, nil, nil, root);
+//      root.setLeft(n30);
+//      root.setRight(n70);
+//      RedBlackTreeNode n20 = new RedBlackTreeNode(black, 20, nil, nil, n30);
+//      RedBlackTreeNode n40 = new RedBlackTreeNode(black, 40, nil, nil, n30);
+//      n30.setLeft(n20);
+//      n30.setRight(n40);
+//      RedBlackTreeNode n60 = new RedBlackTreeNode(black, 60, nil, nil, n70);
+//      RedBlackTreeNode n80 = new RedBlackTreeNode(black, 80, nil, nil, n70);
+//      n70.setLeft(n60);
+//      n70.setRight(n80);
+//
+//      RedBlackTreeNode n15 = new RedBlackTreeNode(black, 15, nil, nil, n20);
+//      RedBlackTreeNode n25 = new RedBlackTreeNode(black, 25, nil, nil, n20);
+//      n20.setLeft(n15);
+//      n20.setRight(n25);
+//      RedBlackTreeNode n35 = new RedBlackTreeNode(black, 35, nil, nil, n40);
+//      RedBlackTreeNode n45 = new RedBlackTreeNode(black, 45, nil, nil, n40);
+//      n40.setLeft(n35);
+//      n40.setRight(n45);
+//      RedBlackTreeNode n55 = new RedBlackTreeNode(black, 55, nil, nil, n60);
+//      RedBlackTreeNode n65 = new RedBlackTreeNode(black, 65, nil, nil, n60);
+//      n60.setLeft(n55);
+//      n60.setRight(n65);
+//      RedBlackTreeNode n75 = new RedBlackTreeNode(black, 75, nil, nil, n80);
+//      RedBlackTreeNode n85 = new RedBlackTreeNode(black, 85, nil, nil, n80);
+//      n80.setLeft(n75);
+//      n80.setRight(n85);
+//      T.setRoot(root);
+//
+//      T.preorder(T.getRoot());
+//      System.out.println("will del n60");
+//      T.RB_DELETE(T, n60);
+//
+//      T.preorder(T.getRoot());
+//      System.out.println("deltest2 end");
+//   }
+   public static void deltest3() {
+      System.out.println("deltest3 start");
+      int[] a = {10, 40, 30, 60, 90, 70, 20, 50, 80, 100, 110 , 120, 130, 140};
       RedBlackTree T = new RedBlackTree();
-      RedBlackTreeNode nil = RedBlackTree.nil;
-      RedBlackTreeNode root = new RedBlackTreeNode(black, 50, nil, nil, nil);
-
-      RedBlackTreeNode n30 = new RedBlackTreeNode(red, 30, nil, nil, root);
-      RedBlackTreeNode n70 = new RedBlackTreeNode(red, 70, nil, nil, root);
-      root.setLeft(n30);
-      root.setRight(n70);
-      RedBlackTreeNode n20 = new RedBlackTreeNode(black, 20, nil, nil, n30);
-      RedBlackTreeNode n40 = new RedBlackTreeNode(black, 40, nil, nil, n30);
-      n30.setLeft(n20);
-      n30.setRight(n40);
-      RedBlackTreeNode n60 = new RedBlackTreeNode(black, 60, nil, nil, n70);
-      RedBlackTreeNode n80 = new RedBlackTreeNode(black, 80, nil, nil, n70);
-      n70.setLeft(n60);
-      n70.setRight(n80);
-
-      RedBlackTreeNode n15 = new RedBlackTreeNode(black, 15, nil, nil, n20);
-      RedBlackTreeNode n25 = new RedBlackTreeNode(black, 25, nil, nil, n20);
-      n20.setLeft(n15);
-      n20.setRight(n25);
-      RedBlackTreeNode n35 = new RedBlackTreeNode(black, 35, nil, nil, n40);
-      RedBlackTreeNode n45 = new RedBlackTreeNode(black, 45, nil, nil, n40);
-      n40.setLeft(n35);
-      n40.setRight(n45);
-      RedBlackTreeNode n55 = new RedBlackTreeNode(black, 55, nil, nil, n60);
-      RedBlackTreeNode n65 = new RedBlackTreeNode(black, 65, nil, nil, n60);
-      n60.setLeft(n55);
-      n60.setRight(n65);
-      RedBlackTreeNode n75 = new RedBlackTreeNode(black, 75, nil, nil, n80);
-      RedBlackTreeNode n85 = new RedBlackTreeNode(black, 85, nil, nil, n80);
-      n80.setLeft(n75);
-      n80.setRight(n85);
-      T.setRoot(root);
-
+      RedBlackTreeNode node = null;
+      for (int i:a) {
+         System.out.println(i);
+         node = T.RB_NODE(i);
+         T.RB_INSERT(T, node);
+      }
       T.preorder(T.getRoot());
-      System.out.println("will del n60");
-      T.RB_DELETE(T, n55);
-
+      System.out.println("will del");
+      RedBlackTreeNode del = RedBlackTree.searchNode(T, 70);
+      T.RB_DELETE(T, del);
       T.preorder(T.getRoot());
-      System.out.println("deltest2 end");
+
+      System.out.println("deltest3 end");
    }
 }
