@@ -1,1 +1,1 @@
-### [详细解释，参考博客](https://www.muffinyu.com/#/archive/%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%EF%BC%881%EF%BC%89%E2%80%94%E2%80%94%E7%BA%A2%E9%BB%91%E6%A0%91)
+### [详细解释，参考博客](https://muffinyu.com/2019/10/08/算法基础(1)——红黑树/)

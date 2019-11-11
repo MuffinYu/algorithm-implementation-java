@@ -2,7 +2,7 @@
 
 - :link: [数组排序](./src/main/java/ArraySort)
 
-- :link: [链表](./src/main/java/LinkList)
+- :link: [链表](./src/main/java/LinkedList)
 
 - :link: [二叉树](./src/main/java/BinaryTree)
 
